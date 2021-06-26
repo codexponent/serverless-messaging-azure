@@ -1,0 +1,58 @@
+<!doctype html>
+
+<head>
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<title>Serverless Application</title>
+  </head>
+
+
+<h2 style="text-align: center;" class="mdc-typography--headline3">Select an message to submit and get notified on Azure Functions</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+{% if filename %}
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+	<div class="mdc-card" style="text-align: center;">
+    <dl>
+		
+		<!-- Message:
+		<p>
+			<input type="text" name="message" required>
+		</p> -->
+
+		Message: 
+		<label style="text-align: center;" class="mdc-text-field mdc-text-field--filled">
+			<span class="mdc-text-field__ripple"></span>
+			<span class="mdc-floating-label" id="my-label-id"></span>
+			<input class="mdc-text-field__input" type="text" name="message" aria-labelledby="my-label-id">
+			<span class="mdc-line-ripple"></span>
+		  </label>
+
+		  <!-- <p>
+			<input style="text-align: center;" type="file" name="file" autocomplete="off" required>
+		</p> -->
+		
+    </dl>
+    <p style="text-align: center;">
+		<button class="mdc-button foo-button">
+			<div class="mdc-button__ripple"></div>
+			<span class="mdc-button__label">Submit</span>
+		  </button>
+		<!-- <input type="submit" value="Submit"> -->
+	</p>
+</div>
+</form>
