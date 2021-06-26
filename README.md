@@ -12,7 +12,7 @@ I wanted to build an application that had a serverless functionality totally on 
 5. Python SDK
 
 # Replication Steps:
-1. Infrastructure: I have written all the steps to create the infrastructure on my medium blob.
+1. Infrastructure: I have written all the steps to create the infrastructure on my medium blog.
  
 2. Code
 ```bash
