@@ -1,0 +1,2 @@
+Flask==2.0.1
+azure-storage-queue==12.1.6
